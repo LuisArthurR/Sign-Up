@@ -1,8 +1,7 @@
 const fields = document.querySelectorAll('[required]')
 
 function validateField(field){
-
-    //Verifica se existem erros
+    
     function verifyErrors(){
         let foundError = false;
 
@@ -11,7 +10,6 @@ function validateField(field){
         const pass2 = document.querySelector('.password2-input')
 
         for(let error in field.validity){
-            //verifica se tem erro
             
             const letters = /^[A-Za-z]+$/;
 
@@ -30,11 +28,9 @@ function validateField(field){
         return foundError;
     }
 
-    //console.log(field.validity);
-
     function customMessage(typeError){
         const messages = {
-            text : {
+            text: {
                 valueMissing: "Campo obrigatório",
                 tooShort: "O campo precisa ter no minímo 4 caracteres",
                 tooLong: "O campo pode ter no mpaximo 20 caracteres",
@@ -103,8 +99,7 @@ function validation(event){
 
 for(let field of fields){
     field.addEventListener('invalid', event =>{
-
-        //Eliminar box padrão
+        
         event.preventDefault();
         validation(event);
     });
